@@ -7,12 +7,19 @@ class QuestionPage extends Component {
     render() {
         const { authedUser, question } = this.props;
 
-        if (authedUser === null) {
+        if (!authedUser) {
             alert("Please login to view this page.");
-            return <Redirect to="/" />;
+            return (
+                <Redirect
+                    to={{
+                        pathname: "/signin",
+                        state: { from: this.props.pathname },
+                    }}
+                />
+            );
         }
 
-        if (question === null) {
+        if (!question) {
             return <Redirect to="/404" />;
         }
 
@@ -20,12 +27,16 @@ class QuestionPage extends Component {
     }
 }
 
-function mapStateToProps({ questions, authedUser }, props) {
+function mapStateToProps({ questions, authedUser, loading }, props) {
     const { id } = props.match.params;
+    const pathname = props.location.pathname;
+    console.log(questions);
 
     return {
         authedUser,
         question: questions[id] ? questions[id] : null,
+        pathname,
+        loading,
     };
 }
 

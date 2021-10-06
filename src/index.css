@@ -25,3 +25,10 @@ code {
 main {
     font-family: "Quicksand", sans-serif;
 }
+
+.loading {
+    display: block;
+    width: 100px;
+    text-align: center;
+    margin: 150px auto;
+}

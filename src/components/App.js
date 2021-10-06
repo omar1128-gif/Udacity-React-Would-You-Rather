@@ -16,6 +16,7 @@ import SignInPage from "./SignInPage";
 import QuestionPage from "./QuestionPage";
 import LeaderBoard from "./LeaderBoard";
 import Page404 from "./Page404";
+import Loading from "./Loading";
 
 class App extends Component {
     componentDidMount() {
@@ -29,36 +30,44 @@ class App extends Component {
                     <LoadingBar />
                     <Nav />
                     <main>
-                        <Switch>
-                            <Route path="/" exact component={Home} />
-                            <Route
-                                path="/questions/:id"
-                                exact
-                                component={QuestionPage}
-                            />
+                        {this.props.loading ? (
+                            <Loading />
+                        ) : (
+                            <Switch>
+                                <Route path="/" exact component={Home} />
+                                <Route
+                                    path="/questions/:id"
+                                    exact
+                                    component={QuestionPage}
+                                />
 
-                            <Route path="/add" exact component={NewQuestion} />
-                            <Route
-                                path="/leaderboard"
-                                exact
-                                component={LeaderBoard}
-                            />
-                            <Route
-                                path="/signin"
-                                exact
-                                component={SignInPage}
-                            />
-                            <Route
-                                path="/signout"
-                                exact
-                                render={() => <Redirect to="/signin" />}
-                            />
-                            <Route path="/404" component={Page404} />
+                                <Route
+                                    path="/add"
+                                    exact
+                                    component={NewQuestion}
+                                />
+                                <Route
+                                    path="/leaderboard"
+                                    exact
+                                    component={LeaderBoard}
+                                />
+                                <Route
+                                    path="/signin"
+                                    exact
+                                    component={SignInPage}
+                                />
+                                <Route
+                                    path="/signout"
+                                    exact
+                                    render={() => <Redirect to="/signin" />}
+                                />
+                                <Route path="/404" component={Page404} />
 
-                            <Route path="*">
-                                <Redirect to="/404" />
-                            </Route>
-                        </Switch>
+                                <Route path="*">
+                                    <Redirect to="/404" />
+                                </Route>
+                            </Switch>
+                        )}
                     </main>
                 </Fragment>
             </Router>
@@ -66,4 +75,4 @@ class App extends Component {
     }
 }
 
-export default connect()(App);
+export default connect(({ loading }) => ({ loading }))(App);
