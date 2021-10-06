@@ -1,0 +1,92 @@
+.ranking-container {
+    width: 60%;
+    max-width: 690px;
+    padding: 15px;
+    margin: 20px auto;
+    border: 2px solid #24252a;
+    display: flex;
+    border-radius: 12px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+}
+
+.user-avatar,
+.user-details {
+    padding: 15px;
+    margin-right: 20px;
+    border-right: 1px solid #ededed;
+}
+
+.user-avatar img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.user-details {
+    flex-grow: 2;
+}
+
+.user-details h3 {
+    margin: 15px 0;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.user-statistics {
+    padding: 15px;
+    padding-left: 0;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 400;
+}
+
+.user-score {
+    border: 2px solid #ededed;
+    border-radius: 30px;
+    overflow: hidden;
+
+    text-align: center;
+}
+
+.score-word {
+    background-color: #ededed;
+    padding: 15px;
+}
+
+.num-score-container {
+    padding: 15px;
+}
+
+.score {
+    color: #3d2c8d;
+    font-size: 40px;
+    font-weight: 400;
+    font-family: "Parisienne", cursive;
+}
+
+.trophy-icon {
+    width: 54px;
+    height: 54px;
+    padding: 5px;
+    border-radius: 50%;
+    position: absolute;
+    left: -10px;
+    top: -10px;
+}
+
+.first {
+    background-color: #fee101;
+}
+
+.second {
+    background-color: #d7d7d7;
+}
+
+.third {
+    background-color: #a77044;
+}

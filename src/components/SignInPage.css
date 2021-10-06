@@ -1,0 +1,78 @@
+.sign-in-container {
+    border: 1px solid black;
+    text-align: center;
+    margin: 15px auto;
+    width: 50%;
+    max-width: 570px;
+    border-radius: 14px;
+}
+
+.sign-in-container-phrases {
+    margin: 0;
+    background-color: #e6e6e6;
+    border-bottom: 1px solid black;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    padding: 12px;
+}
+
+#welcome-phrase {
+    margin: 0;
+    font-weight: bold;
+}
+
+#sign-in-phrase {
+    margin: 0;
+}
+
+.sign-in-container img {
+    margin: 10px auto;
+    width: 160px;
+    height: 160px;
+    animation: rotation 6s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+#sign-in-word {
+    color: #1dd3bd;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0;
+}
+
+.select-list {
+    width: 80%;
+    height: 32px;
+    margin: 15px auto;
+    font-size: 16px;
+}
+
+.select-list option {
+    font-size: 16px;
+}
+
+#sign-in-button {
+    background-color: #1dd3bd;
+    border: 1px solid #1dd3bd;
+    color: white;
+    font-weight: bold;
+    width: 80%;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px 10% 16px 10%;
+    transition: color 0.6s, background-color 0.6s;
+}
+
+#sign-in-button:hover {
+    background-color: white;
+    color: #1dd3bd;
+    cursor: pointer;
+}

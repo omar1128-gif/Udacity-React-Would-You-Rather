@@ -1,0 +1,50 @@
+.new-question {
+    border: 2px solid #24252a;
+    margin: 15px auto;
+    width: 60%;
+    max-width: 675px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#new-question-create-phrase {
+    background-color: #ededed;
+    padding: 15px;
+    margin: 0 0 10px 0;
+    text-align: center;
+    border-bottom: 1px solid #1dd3bd;
+}
+
+#new-question-content {
+    padding: 15px;
+}
+
+#new-question-content h5,
+#new-question-content h4 {
+    margin: 15px;
+}
+
+.input-field {
+    margin: 5px 5%;
+    width: 90%;
+    height: 30px;
+}
+
+.submit-button {
+    background-color: #1dd3bd;
+    border: 1px solid #1dd3bd;
+    color: white;
+    width: 70%;
+    font-size: 16px;
+    padding: 7px;
+    border-radius: 10px;
+    margin: 15px 15%;
+    box-shadow: 1px 1px 3px black;
+    transition: color 0.8s, background-color 0.8s;
+}
+
+.submit-button:hover {
+    background-color: white;
+    color: #1dd3bd;
+    cursor: pointer;
+}
