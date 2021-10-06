@@ -1,5 +1,6 @@
 import { showLoading, hideLoading } from "react-redux-loading-bar";
 import { _saveQuestion, _saveQuestionAnswer } from "../utils/_DATA";
+import { setLoading } from "./loading";
 
 export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
 export const ADD_QUESTION = "ADD_QUESTION";
@@ -34,13 +35,17 @@ export function handleAddQuestion(optionOneText, optionTwoText) {
     return (dispatch, getState) => {
         const { authedUser } = getState();
         dispatch(showLoading());
+        dispatch(setLoading(true));
         return _saveQuestion({
             optionOneText,
             optionTwoText,
             author: authedUser,
         })
             .then((question) => dispatch(addQuestion(question, authedUser)))
-            .then(() => dispatch(hideLoading()));
+            .then(() => {
+                dispatch(hideLoading());
+                dispatch(setLoading(false));
+            });
     };
 }
 
@@ -48,8 +53,12 @@ export function handleSaveQuestionAnswer(qid, answer) {
     return (dispatch, getState) => {
         const { authedUser } = getState();
         dispatch(showLoading());
+        dispatch(setLoading(true));
         return _saveQuestionAnswer({ authedUser, qid, answer })
             .then(() => dispatch(saveAnswer({ authedUser, qid, answer })))
-            .then(() => dispatch(hideLoading()));
+            .then(() => {
+                dispatch(hideLoading());
+                dispatch(setLoading(false));
+            });
     };
 }
