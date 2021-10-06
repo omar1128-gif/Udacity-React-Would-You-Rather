@@ -74,7 +74,8 @@ class Home extends Component {
                             </li>
                         ))}
 
-                    {Object.values(questions.unanswered).length === 0 &&
+                    {userSelection === "unanswered" &&
+                        Object.values(questions.unanswered).length === 0 &&
                         Object.values(questions.answered).length > 0 && (
                             <h2 className="sorry-phrase">
                                 Sorry ...Waiting for new questions{" "}
